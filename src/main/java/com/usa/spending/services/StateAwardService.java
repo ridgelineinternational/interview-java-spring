@@ -26,20 +26,19 @@ public class StateAwardService {
         return this.restTemplate.getForObject(STATE_SEARCH, StateListing[].class);
     }
 
-    // TODO -- Get all basic spending information for each state, ordered by "amount".
+    // TODO #1 -- Get all basic spending information for each state, ordered by "amount".
     public ArrayList<StateListing> getAllSorted() {
         return null;
     }
 
-    // TODO -- Get all awards for a specific state by FIPS code
+    // TODO #2 -- Get all awards for a specific state by FIPS code
     public StateOverview getForStateByFips(String fips) {
         String url = MessageFormat.format(this.STATE_DETAIL, fips);
         System.out.println("Fetching state spending detail from: URL=" + url + ", fips=" + fips);
         return null;
-        //return this.restTemplate.getForObject(url, StateOverview.class);
     }
 
-    // TODO -- Get all awards for a specific state by abbreviation
+    // TODO #5 -- Get all awards for a specific state by abbreviation
     //  Unfortunately, the public API does not have an endpoint for this directly
     public StateOverview getForStateCode(String code) {
         return null;

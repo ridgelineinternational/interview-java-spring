@@ -12,7 +12,7 @@ public class StateListing {
     private String code;        // State abbreviation (i.e. "AK")
     private String name;        // State name (i.e. "Alaska")
 
-    // TODO -- convert to Enum based on types on:
+    // TODO #7 -- convert to Enum based on types on:
     //  https://github.com/fedspendingtransparency/usaspending-api/blob/master/usaspending_api/api_contracts/contracts/v2/recipient/state.md
     private String type;
 
