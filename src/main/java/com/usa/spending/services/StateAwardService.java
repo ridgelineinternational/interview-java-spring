@@ -4,6 +4,7 @@ import com.usa.spending.models.StateListing;
 import com.usa.spending.models.StateOverview;
 
 import org.springdoc.core.converters.models.Sort;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,6 +12,7 @@ import java.text.MessageFormat;
 import java.util.List;
 
 @Service
+@Slf4j
 public class StateAwardService {
     private final RestTemplate restTemplate = new RestTemplate();
     private final String STATE_SEARCH = "https://api.usaspending.gov/api/v2/recipient/state/";
@@ -24,7 +26,7 @@ public class StateAwardService {
      * @return Array of StateListing objects
      */
     public StateListing[] getAll() {
-        System.out.println("Fetching all state spending overview from: URL=" + STATE_SEARCH);
+        log.info("Fetching all state spending overview from: URL={}", STATE_SEARCH);
         return this.restTemplate.getForObject(STATE_SEARCH, StateListing[].class);
     }
 
@@ -37,7 +39,7 @@ public class StateAwardService {
     // TODO #2 -- Get all awards for a specific state by FIPS code
     public StateOverview getForStateByFips(String fips) {
         String url = MessageFormat.format(this.STATE_DETAIL, fips);
-        System.out.println("Fetching state spending detail from: URL=" + url + ", fips=" + fips);
+        log.info("Fetching state spending detail from: URL={}, fips={}", url, fips);
         return null;
     }
 
