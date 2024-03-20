@@ -26,7 +26,7 @@ public class StateAwardController {
         return new ResponseEntity<>(this.stateAwardService.getAll(), HttpStatus.OK);
     }
 
-    // TODO #3 -- Get all detailed spending information for each state
+    // TODO #2 -- Get all detailed spending information for each state
     /*
     @GetMapping("/{fips}")
     @Operation(summary = "Get detailed spending information for specific state by FIPS code")
