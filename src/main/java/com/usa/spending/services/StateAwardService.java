@@ -2,11 +2,13 @@ package com.usa.spending.services;
 
 import com.usa.spending.models.StateListing;
 import com.usa.spending.models.StateOverview;
+
+import org.springdoc.core.converters.models.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class StateAwardService {
@@ -27,7 +29,8 @@ public class StateAwardService {
     }
 
     // TODO #1 -- Get all basic spending information for each state, ordered by "amount".
-    public ArrayList<StateListing> getAllSorted() {
+    public List<StateListing> getAllSorted(Sort sort) {
+        // hint user sort.getSort(), where .get(0) is the field and .get(1) is the direction (asc/desc)
         return null;
     }
 

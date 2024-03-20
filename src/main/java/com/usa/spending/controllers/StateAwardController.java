@@ -4,17 +4,28 @@ import com.usa.spending.models.StateListing;
 import com.usa.spending.models.StateOverview;
 import com.usa.spending.services.StateAwardService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import lombok.extern.slf4j.Slf4j;
+import org.springdoc.core.converters.models.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 @RestController
+@Slf4j
 @RequestMapping("/api/v1/recipient/state")
 public class StateAwardController {
     private final StateAwardService stateAwardService;
+
+    private static final String EXAMPLE_SORT = """
+        {
+        "sort": [
+          "amount,asc"
+        ]
+      }
+      """;
 
     public StateAwardController(StateAwardService stateAwardService) {
         this.stateAwardService = stateAwardService;
@@ -22,7 +33,9 @@ public class StateAwardController {
 
     @GetMapping("/all")
     @Operation(summary = "Get all basic spending information for each state")
-    public ResponseEntity<StateListing[]> getAll() {
+    public ResponseEntity<StateListing[]> getAll(
+        @Parameter(description = "Sort by a field", required = false, example = EXAMPLE_SORT) Sort sort
+    ) {
         return new ResponseEntity<>(this.stateAwardService.getAll(), HttpStatus.OK);
     }
 
