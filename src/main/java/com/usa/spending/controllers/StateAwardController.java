@@ -39,11 +39,14 @@ public class StateAwardController {
         return new ResponseEntity<>(this.stateAwardService.getAll(), HttpStatus.OK);
     }
 
+    // TODO #3 -- Get detailed spending information for state by FIPS code
+    /*
     @GetMapping("/{fips}")
-    @Operation(summary = "Wire in data in TODO #3 - Get detailed spending information for specific state by FIPS code")
+    @Operation(summary = "Get detailed spending information for specific state by FIPS code")
     public ResponseEntity<StateOverview> getDetail(@PathVariable String fips) {
         return new ResponseEntity<>(this.stateAwardService.getForStateByFips(fips), HttpStatus.OK);
     }
+    */
 
     // TODO #5 -- Get all awards for a specific state by state code
 
