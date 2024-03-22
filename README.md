@@ -15,3 +15,4 @@ Once the application is running, you can access the Swagger UI at http://localho
 * Look for TODOs remaining in this project
 * Implement more of the functionality found in the USASpending API (https://api.usaspending.gov/docs/endpoints)
 * Implement things like paging, sorting, ordering, filtering, etc.
+* Ingest the data into a local database and provide a way to query it

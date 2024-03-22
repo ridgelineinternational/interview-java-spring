@@ -31,19 +31,21 @@ public class StateAwardService {
     }
 
     // TODO #1 -- Get all basic spending information for each state, ordered by "amount".
+    // TODO #2 -- Implement generic sorting by client-requested fields using "Sort" object
     public List<StateListing> getAllSorted(Sort sort) {
-        // hint user sort.getSort(), where .get(0) is the field and .get(1) is the direction (asc/desc)
+        // hint use sort.getSort(), where .get(0) is the field and .get(1) is the direction (asc/desc)
+        StateListing[] listings = this.getAll();
         return null;
     }
 
-    // TODO #2 -- Get all awards for a specific state by FIPS code
+    // TODO #3 -- Get detailed spending information for state by FIPS code
     public StateOverview getForStateByFips(String fips) {
         String url = MessageFormat.format(this.STATE_DETAIL, fips);
         log.info("Fetching state spending detail from: URL={}, fips={}", url, fips);
         return null;
     }
 
-    // TODO #5 -- Get all awards for a specific state by abbreviation
+    // TODO #4 -- Get all awards for a specific state by abbreviation
     //  Unfortunately, the public API does not have an endpoint for this directly
     public StateOverview getForStateCode(String code) {
         return null;

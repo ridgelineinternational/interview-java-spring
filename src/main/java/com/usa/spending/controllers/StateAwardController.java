@@ -39,17 +39,14 @@ public class StateAwardController {
         return new ResponseEntity<>(this.stateAwardService.getAll(), HttpStatus.OK);
     }
 
-    // TODO #2 -- Get all detailed spending information for each state
-    /*
     @GetMapping("/{fips}")
-    @Operation(summary = "Get detailed spending information for specific state by FIPS code")
+    @Operation(summary = "Wire in data in TODO #3 - Get detailed spending information for specific state by FIPS code")
     public ResponseEntity<StateOverview> getDetail(@PathVariable String fips) {
         return new ResponseEntity<>(this.stateAwardService.getForStateByFips(fips), HttpStatus.OK);
     }
-    */
 
-    // TODO #4 -- Get all awards for a specific state by state code
+    // TODO #5 -- Get all awards for a specific state by state code
 
-    // TODO #6 -- Implement a POST request to perform advanced querying/filtering of data
+    // TODO #6 -- Implement a POST request to perform advanced querying/filtering of data according to the public api search schema
     //  -- consult documentation (https://api.usaspending.gov/docs/endpoints) for information on the /api/v2/search/... functionality
 }
